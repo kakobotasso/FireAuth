@@ -11,14 +11,30 @@ namespace FireAuth
     [DesignTimeVisible(true)]
     public partial class MainPage : ContentPage
     {
+        IAuth auth;
+
         public MainPage()
         {
             InitializeComponent();
+            auth = DependencyService.Get<IAuth>();
         }
 
-        async void LoginClicked(object sender, EventArgs e) 
+        async void LoginClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new LoggedPage());
+            string Token = await auth.LoginWithEmailPassword(EmailInput.Text, PasswordInput.Text);
+            if (Token != "")
+            {
+                await Navigation.PushAsync(new LoggedPage());
+            }
+            else
+            {
+                ShowError();
+            }
+        }
+
+        async private void ShowError()
+        {
+            await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
     }
 }
