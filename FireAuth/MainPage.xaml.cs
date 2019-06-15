@@ -18,6 +18,7 @@ namespace FireAuth
 
         async void LoginClicked(object sender, EventArgs e) 
         {
+            await Navigation.PushAsync(new LoggedPage());
         }
     }
 }
