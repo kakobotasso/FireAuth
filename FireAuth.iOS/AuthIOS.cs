@@ -23,5 +23,19 @@ namespace FireAuth.iOS
             }
 
         }
+
+        public bool SignUpWithEmailPassword(string email, string password)
+        {
+            try
+            {
+                var signUpTask = Auth.DefaultInstance.CreateUserAsync(email, password);
+                return signUpTask.Result != null;
+            }
+            catch (Exception e)
+            {
+                return false;
+            } 
+
+        }
     }
 }

@@ -36,5 +36,10 @@ namespace FireAuth
         {
             await DisplayAlert("Authentication Failed", "E-mail or password are incorrect. Try again!", "OK");
         }
+
+        async void SignUpClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SignUpPage());
+        }
     }
 }

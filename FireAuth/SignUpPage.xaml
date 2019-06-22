@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FireAuth" x:Class="FireAuth.MainPage">
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="FireAuth.SignUpPage">
     <StackLayout
         VerticalOptions="Center"
         Margin="20">
         
         <Label
-            Text="FireAuth"
+            Text="Create your account"
             HorizontalOptions="Center"
             TextColor="#4682B4"
-            FontSize="35"
+            FontSize="30"
             Margin="0, 20" />
         
         <Entry
@@ -22,18 +22,12 @@
             x:Name="PasswordInput" />
         
         <Button
-            Text="Enter"
-            Clicked="LoginClicked"
+            Text="Sign Up"
+            Clicked="SignUpClicked"
             Margin="60, 40"
             BackgroundColor="#4682B4"
             TextColor="White" />
         
-        <Button
-            Text="Create new account"
-            TextColor="#4682B4"
-            HorizontalOptions="Center"
-            BackgroundColor="Transparent"
-            Clicked="SignUpClicked" />
-        
     </StackLayout>
+
 </ContentPage>
